@@ -19,8 +19,8 @@ bool CHARACTER::CheckSlowMode(bool button, BYTE type)
 	auto slowtime = quest::CQuestManager::instance().GetEventFlag("chatslowmode");
 	if (slowtime < 0)
 		slowtime = -1;
-	auto IsEqual = [type](std::list<BYTE> list) -> bool {return std::find(list.begin(), list.end(), type) != list.end();};
-	auto GenerateTime = [](const auto & sec) {
+	auto IsEqual = [type](const std::list<BYTE>& list) -> bool {return std::find(list.begin(), list.end(), type) != list.end();};
+	auto GenerateTime = [](auto sec) {
 		char buf[128 + 1];
 		long hour = sec / 3600;
 		sec -= hour * 3600;
