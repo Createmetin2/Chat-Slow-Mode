@@ -26,7 +26,7 @@ bool CHARACTER::CheckSlowMode(bool button, BYTE type)
 				return true;
 		return false;
 	};
-	auto GenerateTime = [](auto sec) {
+	auto GenerateTime = [](const auto & sec) {
 		char buf[128 + 1];
 		long hour = sec / 3600;
 		sec -= hour * 3600;
