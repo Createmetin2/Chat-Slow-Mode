@@ -20,12 +20,7 @@ bool CHARACTER::CheckSlowMode(bool button, BYTE type)
 	if (slowtime < 0)
 		slowtime = -1;
 	auto IsEqual = [type](std::list<BYTE> list)
-	-> bool {
-		for (auto i : list)
-			if (i == type)
-				return true;
-		return false;
-	};
+	-> bool {return std::find(list.begin(), list.end(), type) != list.end();};
 	auto GenerateTime = [](const auto & sec) {
 		char buf[128 + 1];
 		long hour = sec / 3600;
