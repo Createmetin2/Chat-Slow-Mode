@@ -17,7 +17,8 @@ if app.CHAT_SLOW_MODE:
 			self.btnSlowMode = ui.Button()
 			self.btnSlowMode.SetParent(self)
 			self.btnSlowMode.SetEvent(ui.__mem_func__(self.ChatSlowMode))
-			self.btnSlowMode.Hide()	
+			self.btnSlowMode.Hide()
+			self.InformationText = []
 			
 #Find
 	def SetSendWhisperEvent(self, event):
